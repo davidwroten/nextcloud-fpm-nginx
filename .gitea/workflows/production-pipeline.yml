@@ -1,0 +1,26 @@
+name: Build and Push Docker Image
+run-name: ${{ gitea.actor }} is running
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  Builder:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Log in to GitHub Container Registry
+      uses: docker/login-action@v2
+      with:
+        registry: ghcr.io
+        username: ${{ secrets.GHUB_USERNAME }}
+        password: ${{ secrets.GHUB_PASSWORD }}
+
+    - name: Build and push Nextcloud Image
+      run: |
+        docker build -t ghcr.io/davidwroten/nextcloud-fpm-nginx:latest .
+        docker push ghcr.io/davidwroten/nextcloud-fpm-nginx:latest
