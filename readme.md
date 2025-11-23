@@ -28,7 +28,7 @@ This approach provides:
 
 ## Features
 
-✅ Based on `nextcloud:31-fpm`  
+✅ Based on `nextcloud:32-fpm`  
 ✅ Nginx with Brotli & gzip enabled  
 ✅ Supervisor to run `php-fpm` and `nginx` together  
 ✅ Optimized `nginx.conf` for Nextcloud (security headers, caching, `.well-known` handling, etc.)  
