@@ -1,4 +1,4 @@
-FROM nextcloud:32.0.6-fpm
+FROM nextcloud:33.0.0-fpm
 LABEL org.opencontainers.image.source="https://github.com/davidwroten/nextcloud-fpm-nginx"
 LABEL org.opencontainers.image.maintainer="David Wroten <contact@dwroten.com>"
 
